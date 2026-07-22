@@ -33,11 +33,12 @@ jobs:
         with:
           terraform_version: "1.9.0"
 
-      - name: Terraform Init
-        run: terraform init
-
+      # 1. Format code FIRST so it doesn't break later execution plans
       - name: Terraform Format
         run: terraform fmt -recursive 
+
+      - name: Terraform Init
+        run: terraform init
 
       - name: Terraform Validate
         run: terraform validate
