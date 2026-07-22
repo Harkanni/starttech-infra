@@ -13,13 +13,12 @@ terraform {
   }
 
   # Recommended: use a remote backend for team collaboration / CI.
-  # backend "s3" {
-  #   bucket         = "starttech-terraform-state"
-  #   key            = "starttech/terraform.tfstate"
-  #   region         = "us-east-1"
-  #   dynamodb_table = "starttech-terraform-locks"
-  #   encrypt        = true
-  # }
+  backend "s3" {
+    bucket  = "starttech-terraform-state-bucket-cloud-provider" # Change to a unique bucket name
+    key     = "state/terraform.tfstate"
+    region  = "us-east-1" # Change to your AWS region
+    encrypt = true
+  }
 }
 
 provider "aws" {
