@@ -26,7 +26,6 @@ provider "aws" {
   region = var.aws_region
 }
 
-
 # ---------------- Networking ----------------
 module "networking" {
   source = "./modules/networking"
