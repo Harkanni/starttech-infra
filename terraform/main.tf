@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 1.6.0"
+  # required_version = ">= 1.11.0"
 
   required_providers {
     aws = {
@@ -14,10 +14,11 @@ terraform {
 
   # Recommended: use a remote backend for team collaboration / CI.
   backend "s3" {
-    bucket  = "starttech-terraform-state-bucket-cloud-provider" # Change to a unique bucket name
-    key     = "state/terraform.tfstate"
-    region  = "us-east-1" # Change to your AWS region
-    encrypt = true
+    bucket       = "starttech-terraform-state-bucket-cloud-provider"
+    key          = "state/terraform.tfstate"
+    region       = "us-east-1"
+    encrypt      = true
+    use_lockfile = true
   }
 }
 
