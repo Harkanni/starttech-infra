@@ -31,7 +31,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: "1.9.0"
+          terraform_version: "1.15.6"
 
       # 1. Format code FIRST so it doesn't break later execution plans
       - name: Terraform Format
